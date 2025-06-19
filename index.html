@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Календарь заказов (amoCRM)</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Календарь заказов (amoCRM)</h1>
+      <div id="calendar-container">
+        <div id="calendar-header" class="mb-3">
+          <button id="prevMonth" class="btn btn-secondary me-2">
+            &lt; Предыдущий
+          </button>
+          <h2 id="currentMonthYear"></h2>
+          <button id="nextMonth" class="btn btn-secondary ms-2">
+            Следующий &gt;
+          </button>
+        </div>
+        <div id="calendar"></div>
+      </div>
+
+      <div id="deal-list">
+        <h2>Сделки на выбранную дату</h2>
+        <ul id="deals"></ul>
+      </div>
+      <div id="auth-section" class="mt-3">
+        <button id="authButton" class="btn btn-primary">Авторизоваться</button>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    />
+    <script src="script.js"></script>
+  </body>
+</html>

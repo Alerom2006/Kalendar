@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  width: 100%;
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+#calendar-container {
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.weekday {
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+  border: 1px solid #ddd;
+  background-color: #f0f0f0;
+}
+
+.calendar-day {
+  text-align: left;
+  padding: 5px;
+  border: 1px solid #ddd;
+  min-height: 60px;
+  position: relative;
+}
+
+.calendar-day:hover {
+  background-color: #f9f9f9;
+}
+
+.has-deals::after {
+  content: attr(data-deal-count);
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 5px;
+  font-size: 0.7em;
+}
+
+#deal-list {
+  width: 40%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#deals {
+  list-style: none;
+  padding: 0;
+}
+
+#deals li {
+  padding: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.deal-info {
+  margin-bottom: 5px;
+}

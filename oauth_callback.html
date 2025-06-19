@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OAuth Callback</title>
+  </head>
+  <body>
+    <h1>Авторизация...</h1>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const code = urlParams.get("code");
+      const state = urlParams.get("state"); // Используем для валидации
+
+      if (!code || !state) {
+        alert("Ошибка авторизации: отсутствует код или состояние.");
+      } else {
+        const clientId = "Нужно заполнить!!!";
+        const clientSecret = "Нужно заполнить!!!";
+        const redirectUri =
+          "https://alerom2006.github.io/Kalendar/oauth_callback.html";
+
+        fetch(`https://aaar31733.amocrm.ru/oauth2/access_token`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            client_id: clientId,
+            client_secret: clientSecret,
+            grant_type: "authorization_code",
+            code: code,
+            redirect_uri: redirectUri,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.access_token && data.refresh_token) {
+              localStorage.setItem(
+                `amo_access_token_${state}`,
+                data.access_token
+              ); // Сохраняем Access Token
+              //localStorage.setItem(`amo_refresh_token_${state}`, data.refresh_token); // Сохраняем Refresh Token (пока не используется)
+              alert("Авторизация прошла успешно!");
+              window.location.href =
+                "https://alerom2006.github.io/Kalendar/index.html"; // Перенаправляем обратно в виджет
+            } else {
+              console.error("Ошибка получения токенов:", data);
+              alert(
+                "Ошибка при получении токенов. Пожалуйста, проверьте консоль."
+              );
+            }
+          })
+          .catch((error) => {
+            console.error("Ошибка запроса токенов:", error);
+            alert("Ошибка при запросе токенов. Пожалуйста, проверьте консоль.");
+          });
+      }
+    </script>
+  </body>
+</html>

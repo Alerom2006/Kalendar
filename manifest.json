@@ -1,0 +1,46 @@
+{
+  "name": "Календарь заказов (с OAuth 2.0)",
+  "description": "Отображает календарь сделок из amoCRM с использованием OAuth 2.0.",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "author": "Your Name",
+  "categories": [],
+  "i18n": "locales/ru.json",
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "integration": {
+    "url": "https://alerom2006.github.io/Kalendar/index.html",
+    "type": "widget",
+    "code": "calendar_oauth_widget"
+  },
+  "oauth2": {
+    "client_id": "Нужно заполнить!!!",
+    "client_secret": "Нужно заполнить!!!",
+    "scope": "crm_full_access",
+    "redirect_uri": "https://alerom2006.github.io/Kalendar/oauth_callback.html"
+  },
+  "settings": {
+    "fields": [
+      {
+        "name": "deal_date_field_id",
+        "title": "ID поля 'Заказ на...'",
+        "type": "number",
+        "default": 808381,
+        "required": false,
+        "hint": "Укажите ID кастомного поля, содержащего дату заказа.  Если не указано, используется дата создания сделки."
+      },
+      {
+        "name": "lead_status_id",
+        "title": "ID статуса для фильтрации сделок",
+        "type": "number",
+        "default": 142,
+        "required": false,
+        "hint": "Укажите ID статуса сделки, который нужно использовать для фильтрации (например, 'Успешно реализовано'). Оставьте пустым, чтобы не фильтровать по статусу."
+      }
+    ]
+  },
+  "locations": ["leads_card", "entity_card"]
+}
