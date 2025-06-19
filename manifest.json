@@ -17,8 +17,8 @@
     "code": "calendar_oauth_widget"
   },
   "oauth2": {
-    "client_id": "Нужно заполнить!!!",
-    "client_secret": "Нужно заполнить!!!",
+    "client_id": "6a7f8cd8-d8c3-460c-bcbc-ca4e49a5e496",
+    "client_secret": "fVDHlU3COOt7Zf3jabEwGQPXlUUuaybS49XBiz6TQP4cZTJ0H5F9tjk7uFO4JQFc",
     "scope": "crm_full_access",
     "redirect_uri": "https://alerom2006.github.io/Kalendar/oauth_callback.html"
   },
